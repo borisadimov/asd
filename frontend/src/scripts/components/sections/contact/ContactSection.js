@@ -22,9 +22,9 @@ export default class ContactSection extends Section {
     this.enterAnimation.reverse().then(() => {
       super.exit(callback)
 
-      if (this.backHandler !== null) {
-        this.backHandler()
-      }
+      // if (this.backHandler !== null) {
+      //   this.backHandler()
+      // }
     })
   }
 }

@@ -419,8 +419,6 @@
   }
 
   .is-active > & {
-    pointer-events: none;
-
     &:after {
       width: 100%;
       height: 100%;
@@ -435,7 +433,6 @@
   }
 
   .is-active ~ * > & {
-    pointer-events: none;
     &:after {
       background-color: transparent;
       border-color: $color-white;
@@ -444,7 +441,6 @@
   }
 
   .is-active + * > & {
-    pointer-events: none;
     &:after {
       background-color: transparent;
       border-color: $color-white;

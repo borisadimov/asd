@@ -11,6 +11,7 @@ export default class Menu {
       '.js-hamburger'
     ).parentElement
     this.nav = document.querySelector('.js-main-menu')
+    this.footerNav = document.querySelector('.js-main-menu-footer')
     this.footer = document.querySelector('.js-menu-footer')
     this.clickCallback = onClick
     this.openCallback = onOpen
@@ -90,6 +91,9 @@ export default class Menu {
     Object.values(this.nav.children).map(item => {
       item.addEventListener('click', this.__onItemClick)
     })
+    Object.values(this.footerNav.querySelectorAll('a')).map(item => {
+      item.addEventListener('click', this.__foterItemClick)
+    })
 
     document
       .querySelector('.js-main-menu-link')
@@ -150,9 +154,21 @@ export default class Menu {
 
   resize = () => {}
 
+  __foterItemClick = event => {
+    event.preventDefault()
+    let dom = event.target
+    if (document.body.classList.contains('has-menu'))
+      this.hamburgerParentDomElement.click()
+    let section = store.getSectionById(dom.getAttribute('data-id'))
+    if (section !== null) {
+      this.clickCallback(section, 'down')
+    }
+
+    return false
+  }
+
   __onItemClick = event => {
     event.preventDefault()
-
     let dom = event.target
     let index = this.__getItemIndex(dom)
     let previousIndex =
@@ -161,6 +177,7 @@ export default class Menu {
     let section = store.getSectionById(dom.getAttribute('data-id'))
 
     // close menu
+
     this.hamburgerParentDomElement.click()
 
     // navigate to the selected section

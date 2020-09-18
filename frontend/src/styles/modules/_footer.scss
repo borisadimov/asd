@@ -1,0 +1,150 @@
+.contact__footer {
+  width: 100%;
+  background: #ffff;
+  border-top: 2px solid #0bffae;
+  display: flex;
+  flex-direction: column;
+  font-family: 'HKGrotesk-Regular', sans-serif;
+}
+
+.footer__main {
+  width: 100%;
+  margin: 60px auto 0px;
+  @include breakpoint($breakpoint-tablet) {
+    margin: 40px;
+  }
+}
+
+.footer__sub {
+  width: 100%;
+  border-top: 1px solid #efefef;
+  padding: 28px 0;
+  .footer__container {
+    flex-direction: column-reverse;
+    @include breakpoint($breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+}
+
+.footer__container {
+  max-width: calc(1200px+24px);
+  padding: 0 24px;
+  margin: 0 auto;
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+  @include breakpoint($breakpoint-tablet) {
+    flex-direction: row;
+  }
+}
+
+.footer__desc {
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #efefef;
+  @include breakpoint($breakpoint-tablet) {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .footer_desc_cont {
+    padding: 20px 0 0 10px;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 23px;
+  }
+  svg {
+    width: 110px;
+    height: 40px;
+  }
+}
+
+.footer__resr,
+.footer__follow,
+.footer__support {
+  width: 160px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-family: 'DIN Condensed';
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 32px;
+  }
+  a {
+    color: #000000;
+    margin-bottom: 16px;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer__icons {
+  display: flex;
+  flex-direction: row;
+  a {
+    margin-right: 16px;
+  }
+}
+
+.footer__resr {
+  @include breakpoint($breakpoint-tablet) {
+    margin-left: auto;
+  }
+}
+
+.footer__logo {
+  opacity: 1;
+  .fillable {
+    fill: #000000 !important;
+    stroke: #000000 !important;
+  }
+  .foglia {
+    fill: #0bffae !important;
+  }
+}
+
+.footer__dotafter {
+  &::after {
+    content: ' ・ ';
+  }
+}
+.footer__spacerafter {
+  margin-right: auto;
+}
+
+.footer__lang {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 16px;
+  }
+  margin-bottom: 32px;
+  @include breakpoint($breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+
+  .footer__bold {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+  }
+  .footer__underline {
+    font-size: 16px;
+    text-decoration: underline;
+  }
+}

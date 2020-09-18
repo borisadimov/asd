@@ -38,8 +38,12 @@ export default class Form {
     this.pagination = new Pagination({
       onClick: newStep => {
         const oldStep = this.currentStep
-        this.currentStep = newStep
-        this.transformInput(oldStep)
+        if (newStep < oldStep) {
+          this.currentStep = newStep
+          this.transformInput(oldStep)
+        } else if (newStep > oldStep) {
+          this.checkForm()
+        }
       }
     })
 
