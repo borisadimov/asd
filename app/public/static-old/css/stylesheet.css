@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/* CSS Document */
+html,
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/* cambio bg color */
+.total {
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-weight: bold;
+  animation: myanimation 35s infinite;
+}
+@keyframes myanimation {
+  0% {
+    background-color: #000000;
+  }
+  25% {
+    background-color: #221259;
+  }
+  50% {
+    background-color: #000000;
+  }
+  75% {
+    background-color: #221259;
+  }
+  100% {
+    background-color: #000000;
+  }
+}
+/* fine cambio bg color */
+* {
+  font-family: "Roboto", serif;
+}
+#junglescontainer figure {
+  max-width: 401px;
+  max-height: 112px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+img.displayed {
+  max-width: 100%;
+  max-height: 100%;
+}
+#junglescontainer p,
+#junglescontainer p.payoff {
+  color: #0bffae;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+  font-size: 17px;
+  text-align: center;
+  width: 275px;
+  margin: 12px auto 0 auto;
+}
+#junglecredits {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#junglecredits p {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: center;
+  opacity: 50%;
+}
+#junglecredits a {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 1px solid #0bffae;
+}
+#junglecredits a:hover {
+  color: #0bffae;
+  border-bottom: 0;
+}
+#junglecredits p span {
+  color: #fe5f42;
+}
+#jungleslogo .path {
+  stroke-dasharray: 20;
+}

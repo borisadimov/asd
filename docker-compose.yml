@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  database:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=jungles
+      - MYSQL_USER=jungles
+      - MYSQL_PASSWORD=jungles
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.database:/var/lib/mysql
+
+  #  app:
+  #    image: webdevops/php-nginx:7.4
+  #    environment:
+  #      WEB_ALIAS_DOMAIN: jungles.vm
+  #      WEB_DOCUMENT_ROOT: /app/public
+  #    ports:
+  #      - "80:80"
+  #      - "443:443"
+  #    volumes:
+  #      - ./app:/app
+  #    depends_on:
+  #      - database
+
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/build/php/Dockerfile
+    working_dir: /var/www
+    ports:
+      - 8000:8000
+    depends_on:
+      - database
+    command: serve --port=8000
+    volumes:
+      - ./app:/var/www
+
+volumes:
+  mysql:

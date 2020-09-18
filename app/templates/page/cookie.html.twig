@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+	<main class="main js-app" data-route="editorial">
+		<header class="header js-header">
+			{% include 'partials/mainmenu.html.twig' %}
+			{% include 'partials/logo.html.twig' with {'className':  'js-logo'} %}
+		</header>
+		<section class="editorial">
+			<article class="editorial__content editorial__content--cookie">
+				{% include 'partials/form.html.twig' %}
+				<div>
+					<h1 class="editorial__title">Informativa “cookie"</h1>
+				</div>
+			</article>
+		</section>
+	</main>
+{% endblock %}

@@ -1,0 +1,184 @@
+.main-menu {
+  position: fixed;
+  width: rem(260);
+  height: rem(260);
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  // background-color: $color-green;
+  background-color: transparent;
+  overflow: hidden;
+  transform: translate(50%, -50%) scale(0);
+  z-index: 102;
+  // transition: all 0.3s ease-out 0s;
+
+  // border: 10px solid red;
+
+  // .no-touch body:not(.has-menu) .hamburger:hover ~ & {
+  //   transform: translate(50%, -50%) scale(1);
+  // }
+
+  .has-menu & {
+    width: 200vh;
+    height: 200vh;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+
+    @include breakpoint($breakpoint-ipad) {
+      width: calc((100vw * 2) - #{rem(140)});
+      height: calc((100vw * 2) - #{rem(140)});
+      top: 50%;
+      right: 0;
+      transform: translate(100vw, -50%);
+      border-radius: 50%;
+    }
+  }
+}
+
+.main-menu__nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  top: calc(50% - 40px);
+  right: calc(50% + #{rem(45)});
+  transform: translate(50vw, -50%);
+  text-align: right;
+  width: rem(150);
+
+  @include breakpoint($breakpoint-ipad) {
+    top: calc(50% - 78px);
+    right: calc(100vw + #{rem(200)});
+    transform: translate(0, -50%);
+  }
+}
+
+.main-menu__item {
+  position: relative;
+  display: inline-block;
+  transform: translateX(#{rem(100)});
+  opacity: 0;
+  margin-bottom: rem(20);
+  cursor: pointer;
+  font-family: $font-bold;
+  font-size: rem(40);
+
+  @include breakpoint($breakpoint-ipad) {
+    margin-bottom: rem(32);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: rem(2);
+    background-color: $color-black;
+    width: 100%;
+    transform: scale(0, 1);
+    transition: all 0.15s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      // width: 100%;
+      transform: scale(1, 1);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.main-menu__bottom {
+  font-family: $font-regular;
+  color: $color-black;
+  display: block;
+  text-align: right;
+  opacity: 0;
+  position: absolute;
+  right: calc(50% - 50vw + #{rem(45)});
+  width: 100%;
+  text-align: right;
+  transform: translateX(#{rem(100)});
+  bottom: calc(50vh + 80px);
+  font-size: rem(13);
+  line-height: rem(18);
+
+  font-size: rem(9);
+  line-height: rem(14);
+
+  // bottom: calc(50vh + 38px);
+  // font-size: rem(8);
+  // line-height: rem(12);
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(13);
+    line-height: rem(18);
+  }
+
+  @include breakpoint($breakpoint-ipad) {
+    font-size: rem(14);
+    bottom: calc(50% - 50vh + #{rem(70)});
+    right: calc(100vw + 196px);
+    transform: translateX(#{rem(100)});
+    width: auto;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: $color-black;
+    opacity: 0.2;
+    display: none;
+
+    @include breakpoint($breakpoint-ipad) {
+      width: rem(494);
+      display: block;
+    }
+  }
+
+  a {
+    color: $color-black;
+  }
+}
+
+.main-menu__contact {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-menu__social {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 6px;
+
+  @include breakpoint($breakpoint-ipad) {
+  }
+}
+
+.main-menu__socialicon {
+  display: inline-block;
+
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+
+  @include breakpoint($breakpoint-ipad) {
+    height: 18px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    width: auto;
+    img{
+      min-height: 24px;
+    }
+  }
+}

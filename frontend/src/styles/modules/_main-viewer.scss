@@ -1,0 +1,38 @@
+.main-viewer {
+  position: relative;
+  background-color: $color-black;
+  color: $color-white;
+  opacity: 0;
+  pointer-events: none;
+  transition: background 0.4s ease-out 0s;
+
+  .no-touch & {
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .touch & {
+    &.is-active {
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+}
+
+.main-viewer__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// .page-title {
+//   .main-viewer & {
+//     font-size: rem(70);
+//     text-align: center;
+//     color: inherit;
+//     transition: color 0.4s ease-out 0s;
+//   }
+// }

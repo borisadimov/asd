@@ -1,0 +1,17 @@
+{% extends '@EasyAdminExtension/default/layout.html.twig' %}
+{% set _content_title = 'Jungles Dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+{%- endblock %}
+{% block content_header %}
+{% endblock %}
+{% block main %}
+    <div class="row" style="height: 600px">
+        <div class="container">
+            <div class="privacy-user__logo">
+                {% include 'partials/logo.html.twig' with {'className':  ''} %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+	<main class="main js-app" data-route="editorial">
+		<header class="header js-header">
+			{% include 'partials/mainmenu.html.twig' %}
+			{% include 'partials/logo.html.twig' with {'className':  'js-logo'} %}
+		</header>
+		<section class="editorial">
+			<nav class="editorial__nav js-tab">
+				<ul class="editorial__nav__list">
+					<li class="editorial__nav__item is-active">
+						<a href="#sito-web" class="editorial__nav__label">SITO WEB</a>
+					</li>
+					<li class="editorial__nav__item">
+						<a href="#clienti" class="editorial__nav__label">CLIENTI</a>
+					</li>
+					<li class="editorial__nav__item">
+						<a href="#fornitori" class="editorial__nav__label">FORNITORI</a>
+					</li>
+				</ul>
+			</nav>
+			<article class="editorial__content js-tab-content">
+				<div class="is-active" data-tab="#sito-web">
+					{% include 'partials/sito-web.html.twig' %}
+				</div>
+				<div data-tab="#clienti">
+					{% include 'partials/clienti.html.twig' %}
+				</div>
+				<div data-tab="#fornitori">
+					{% include 'partials/fornitori.html.twig' %}
+				</div>
+			</article>
+		</section>
+	</main>
+{% endblock %}

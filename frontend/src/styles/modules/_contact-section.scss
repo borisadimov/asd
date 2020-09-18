@@ -1,0 +1,103 @@
+.contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.contact__back {
+  opacity: 1;
+  z-index: 50;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  color: #000;
+  font-size: rem(16);
+  margin-bottom: rem(12);
+  font-family: $font-bold;
+  cursor: pointer;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  height: rem(88);
+  background: $color-white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint($breakpoint-ipad) {
+    height: rem(100);
+    padding-top: rem(16);
+  }
+}
+
+.contact__backcontent {
+  width: 80px;
+  height: 40px;
+  padding-top: 6px;
+}
+
+.contact__backicon {
+}
+
+.contact__background {
+  width: 100%;
+  height: calc(100% - 88px);
+  background: $color-violet;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: scroll;
+
+  @include breakpoint($breakpoint-ipad) {
+    // height: calc(100% - 160px);
+    height: calc(100% - 98px);
+  }
+
+  // &:before {
+  //   content: '';
+  //   width: 220%;
+  //   height: calc(100%);
+  //   background: $color-violet;
+  //   position: absolute;
+  //   left: 50%;
+  //   // top: -40px;
+  //   top: 0;
+  //   transform: translateX(-50%);
+  //   border-radius: 50%;
+
+  //   @include breakpoint($breakpoint-ipad) {
+  //     // height: calc(100% + 122px);
+  //     // top: -62px;
+  //     height: 100%;
+  //     top: 0;
+  //   }
+  // }
+
+  // &:after {
+  //   content: '';
+  //   width: 100%;
+  //   height: 50%;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   background: $color-violet;
+  //   z-index: 0;
+
+  //   @include breakpoint($breakpoint-ipad) {
+  //     height: 50%;
+  //     bottom: rem(-58);
+  //   }
+  // }
+}
+
+.contact__form {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}

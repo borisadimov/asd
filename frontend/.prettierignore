@@ -1,0 +1,6 @@
+config.build.js
+config.dev.js
+package.json
+package-lock.json
+../app/public/static
+/app/public/static

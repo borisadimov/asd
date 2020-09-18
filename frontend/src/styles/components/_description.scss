@@ -1,0 +1,46 @@
+.description {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+
+  text-align: left;
+  font-family: $font-regular;
+  font-size: 18px;
+  line-height: 24px;
+  width: 400px;
+  height: auto;
+
+  position: absolute;
+  top: calc(50% + 31px);
+  left: calc(50% - 130px);
+}
+
+.description--blob {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  color: #fff;
+  z-index: 20;
+
+  display: none;
+
+  @include breakpoint($breakpoint-tablet) {
+    display: block;
+  }
+}
+
+.description--blob-mobile {
+  display: block;
+  top: calc(50% + 23px);
+  width: 100%;
+  left: auto;
+  right: 0;
+  text-align: right;
+  padding-right: 32px;
+  // padding-left: 32px;
+  padding-left: 0;
+
+  @include breakpoint($breakpoint-tablet) {
+    display: none;
+  }
+}

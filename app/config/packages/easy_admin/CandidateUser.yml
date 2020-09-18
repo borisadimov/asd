@@ -1,0 +1,26 @@
+easy_admin:
+  entities:
+    CandidateUser:
+      disabled_actions: ["new", "edit", "delete"]
+      class: App\Entity\CandidateUser
+      label: "Privacy"
+      list:
+        role: ROLE_ADMIN_CANDIDATE
+        fields:
+          - { property: "id", label: "Id" }
+          - { property: "firstName", label: "Nome" }
+          - { property: "lastName", label: "Cognome" }
+          - { property: "email", label: "Email" }
+          - { property: "privacy", label: "Privacy" }
+          - { property: "pdf", template: "bundles/EasyAdminBundle/default/privacy-pdf.html.twig" }
+          - { property: "createdAt", label: "Data di creazione" }
+      search:
+        role: ROLE_ADMIN_CANDIDATE
+      new:
+        role: ROLE_ADMIN_CANDIDATE
+      edit:
+        role: ROLE_ADMIN_CANDIDATE
+      show:
+        role: ROLE_ADMIN_CANDIDATE
+      delete:
+        role: ROLE_ADMIN_CANDIDATE

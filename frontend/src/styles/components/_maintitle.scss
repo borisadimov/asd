@@ -1,0 +1,271 @@
+.maintitle {
+  font-family: $font-bold;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  text-align: right;
+  font-size: rem(70);
+  color: #fff;
+  width: 100%;
+  height: 256px;
+  bottom: -256px;
+
+  z-index: 0;
+  pointer-events: none;
+  cursor: pointer;
+
+  @include breakpoint($breakpoint-tablet) {
+    right: 50%;
+    bottom: auto;
+    top: calc(50% + 34px);
+    transform: translate(50%, 50vh);
+    text-align: center;
+    height: 254px;
+  }
+}
+
+.maintitle--blob {
+  z-index: 200 !important;
+  pointer-events: all;
+}
+
+.maintitle__front {
+  z-index: 200;
+  pointer-events: all;
+
+  @include breakpoint($breakpoint-tablet) {
+    z-index: 0;
+  }
+}
+
+.maintitle__word {
+  position: absolute;
+  right: 50%;
+  width: auto;
+  text-align: right;
+  transform: translateX(50%);
+
+  @include breakpoint($breakpoint-tablet) {
+    width: 200px;
+    transform: none;
+    text-align: center;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+}
+
+.maintitle__word--let {
+  top: 0;
+
+  color: rgb(
+    var(--gradientColor2),
+    var(--gradientColor2),
+    var(--gradientColor2)
+  );
+
+  @include breakpoint($breakpoint-tablet) {
+    top: -36px;
+    left: 50%;
+  }
+}
+
+.maintitle__word--dynamic {
+  top: 66px;
+  right: calc(50% + 46px);
+  width: 200px;
+  height: 70px;
+
+  @include breakpoint($breakpoint-tablet) {
+    top: 30px;
+    left: 50%;
+    z-index: 20;
+  }
+}
+
+.maintitle__word--out {
+  top: 137px;
+
+  color: rgb(
+    var(--gradientColor2),
+    var(--gradientColor2),
+    var(--gradientColor2)
+  );
+
+  @include breakpoint($breakpoint-tablet) {
+    top: 100px;
+    left: 50%;
+
+    background: linear-gradient(
+      20.69deg,
+      rgba(
+          var(--gradientColor1),
+          var(--gradientColor1),
+          var(--gradientColor1),
+          1
+        )
+        37%,
+      rgba(
+          var(--gradientColor2),
+          var(--gradientColor2),
+          var(--gradientColor2),
+          1
+        )
+        130%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.maintitle__word--there {
+  top: 202px;
+
+  color: rgb(
+    var(--gradientColor2),
+    var(--gradientColor2),
+    var(--gradientColor2)
+  );
+
+  @include breakpoint($breakpoint-tablet) {
+    top: 168px;
+    left: 50%;
+
+    background: linear-gradient(
+      0deg,
+      rgba(
+          var(--gradientColor1),
+          var(--gradientColor1),
+          var(--gradientColor1),
+          1
+        )
+        20%,
+      rgba(
+          var(--gradientColor2),
+          var(--gradientColor2),
+          var(--gradientColor2),
+          1
+        )
+        250%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.maintitle__animatable {
+  position: absolute;
+  top: 0;
+  width: 200px;
+
+  color: rgb(
+    var(--gradientColor2),
+    var(--gradientColor2),
+    var(--gradientColor2)
+  );
+
+  @include breakpoint($breakpoint-tablet) {
+    background: linear-gradient(
+      43.15deg,
+      rgba(
+          var(--gradientColor1),
+          var(--gradientColor1),
+          var(--gradientColor1),
+          1
+        )
+        31%,
+      rgba(
+          var(--gradientColor2),
+          var(--gradientColor2),
+          var(--gradientColor2),
+          1
+        )
+        70%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  span {
+    display: inline-block;
+
+    background: transparent;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: #000;
+  }
+}
+
+@-moz-document url-prefix() {
+  .maintitle__word--out {
+    background: transparent;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: rgb(
+      var(--gradientColor2),
+      var(--gradientColor2),
+      var(--gradientColor2)
+    );
+  }
+
+  .maintitle__word--there {
+    background: transparent;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: rgb(
+      var(--gradientColor2),
+      var(--gradientColor2),
+      var(--gradientColor2)
+    );
+  }
+
+  .maintitle__animatable {
+    background: transparent;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: rgb(
+      var(--gradientColor2),
+      var(--gradientColor2),
+      var(--gradientColor2)
+    );
+
+    span {
+      background: transparent;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      color: rgb(
+        var(--gradientColor2),
+        var(--gradientColor2),
+        var(--gradientColor2)
+      );
+    }
+  }
+}
+
+.maintitle__animatable--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.maintitle__subline {
+  position: absolute;
+  width: 154px;
+  height: 4px;
+  background-color: $color-green;
+  right: -9px;
+  top: 57px;
+  border-radius: 8px;
+  opacity: 0;
+
+  @include breakpoint($breakpoint-tablet) {
+    right: auto;
+    left: 50%;
+    top: 58px;
+    transform: translateX(-50%);
+  }
+}

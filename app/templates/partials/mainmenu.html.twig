@@ -1,0 +1,36 @@
+<div class="hamburger">
+ <div class="hamburger__wrapper js-hamburger">
+ 	<span></span>
+	<span></span>
+	<span></span>
+ </div>
+</div>
+
+<div class="main-menu">
+	<div class="main-menu__nav js-main-menu">
+		<div class="main-menu__item" data-id="study">STUDY</div>
+		<div class="main-menu__item" data-id="think">THINK</div>
+		<div class="main-menu__item" data-id="move">MOVE</div>
+		<div class="main-menu__item" data-id="connect">CONNECT</div>
+		<div class="main-menu__item" data-id="contact">CONTACT US</div>
+	</div>
+
+	<div class="main-menu__bottom js-menu-footer">
+		Copyright &copy;{{ "now"|date("Y") }}<br />
+		<strong>Jungles S.r.l.</strong> Via Spartaco 11, 20135 Milano<br />
+		P.IVA 10065560962<br />
+		<div class="main-menu__social">
+			<a href="https://www.linkedin.com/company/28876290" target="_blank" class="main-menu__socialicon"><img src="/static/images/linkedin.svg" alt="LinkedIn" /></a>
+			<a href="https://www.facebook.com/jungles.experience" target="_blank" class="main-menu__socialicon"><img src="/static/images/facebook.svg" alt="Facebook" /></a>
+			<a href="https://www.instagram.com/jungles_ux/" target="_blank" class="main-menu__socialicon"><img src="/static/images/instagram.svg" alt="Instagram" /></a>
+			<a href="https://www.youtube.com/channel/UCleFADL-b2zGeHj0TIlOAzg" target="_blank" class="main-menu__socialicon"><img src="/static/images/youtube.svg" alt="Youtube" /></a>
+		</div>
+		<a href="{{ path('privacy_site') }}" target="_blank">Privacy Policy</a><br />
+		{# Contact: <span class="main-menu__contact js-main-menu-link" data-id="contact"><img src="/static/images/mail2.png" alt=""></span> #}
+		{# Contact: <span class="main-menu__contact js-main-menu-link" data-id="contact">info@jungl.es</span> #}
+		Contact: <a href="#" class="js-main-menu-link" data-id="contact">info@jungl.es</a>
+	</div>
+</div>
+
+<div class="main-menu-background js-menu-background"></div>
+<div class="main-menu-background main-menu-background--over js-menu-over-bg"></div>

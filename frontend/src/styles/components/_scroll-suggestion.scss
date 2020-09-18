@@ -1,0 +1,71 @@
+.scroll-suggestion {
+  opacity: 0;
+  z-index: 50;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  z-index: 0;
+
+  @include breakpoint($breakpoint-tablet) {
+    display: block;
+    height: rem(88);
+  }
+
+  &.no-events {
+    pointer-events: none;
+  }
+
+  &.is-tablet {
+    display: none !important;
+  }
+}
+
+.scroll-suggestion__text {
+  display: inline-block;
+  font-size: rem(16);
+  margin-bottom: rem(12);
+}
+
+.scroll-suggestion__contact {
+  @include breakpoint($breakpoint-ipad) {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    top: rem(38);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-suggestion__standard {
+  @include breakpoint($breakpoint-ipad) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-suggestion__play {
+  @include breakpoint($breakpoint-ipad) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-suggestion__text--contact {
+  font-family: $font-bold;
+}
+
+.scroll-suggestion__back {
+  transform: rotate(180deg);
+  position: relative;
+  top: -10px;
+  display: block;
+}

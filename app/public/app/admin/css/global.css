@@ -1,0 +1,6 @@
+.form-widget input.form-control,
+.form-widget select.form-control,
+.form-widget textarea.form-control,
+.select2-container--bootstrap .select2-selection {
+  max-width: unset;
+}

@@ -1,0 +1,6 @@
+###> idea config files ###
+.idea
+.vscode
+.DS_Store
+docs
+.database

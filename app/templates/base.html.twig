@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+
+	<title>Jungles</title>
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+
+	<link rel="icon" type="image/png"
+		href="{{ absolute_url('static/images/favicon.png')|replace({'http://': 'https://'}) }}" />
+
+	<meta name="description" content="" />
+
+	<meta property="og:url" content="{{ url('index_site')|replace({'http://': 'https://'}) }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Jungles" />
+	<meta property="og:site_name" content="Jungles" />
+	<meta property="og:image"
+		content="{{ absolute_url('static/images/share.png')|replace({'http://': 'https://'}) }}" />
+	<meta property="og:image:secure_url"
+		content="{{ absolute_url('static/images/share.png')|replace({'http://': 'https://'}) }}" />
+	<meta property="og:description"
+		content="Turning interactions into eXperience. Supportiamo i brand nello studio, definizione e sviluppo di esperienze di valore per le persone. #CX #UX #UI and more" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="{{ url('index_site')|replace({'http://': 'https://'}) }}" />
+	<meta name="twitter:creator" content="Jungles" />
+	<meta name="twitter:title" content="Jungles" />
+	<meta name="twitter:description"
+		content="Turning interactions into eXperience. Supportiamo i brand nello studio, definizione e sviluppo di esperienze di valore per le persone. #CX #UX #UI and more" />
+	<meta name="twitter:image"
+		content="{{ absolute_url('static/images/share.png')|replace({'http://': 'https://'}) }}" />
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NVF9LSX');
+	</script>
+	<!-- End Google Tag Manager -->
+</head>
+
+<body class="" data-page="{{ app.request.attributes.get('_route') }}" style="opacity: 0">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVF9LSX" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	{% block content %}{% endblock %}
+	<script>
+		window.recaptchaKey = '6Lf-hOQUAAAAADPxIb8cKYImbLiAaPraz2q8huRG';
+		window.apiUrl = '/api/contact';
+	</script>
+	<script src="https://www.google.com/recaptcha/api.js?render=explicit&hl=it" async defer></script>
+	<script type="text/javascript" src="{{ asset('DrawSVGPlugin.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('static/main.js') }}"></script>
+</body>
+
+</html>

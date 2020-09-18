@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+
+
+    <main class="main js-app" data-route="privacy">
+    <style>
+        body {
+            background-color: white;
+            overflow: scroll;
+        }
+    </style>
+    <div class="privacy-user privacy-user--typ">
+        <div class="container">
+            <div class="privacy-user__logo">
+                {% include 'partials/logo.html.twig' with {'className':  ''} %}
+            </div>
+
+            <div class="privacy-user__title privacy-user__title--main">
+                <h2>
+                    Grazie per aver letto la nostra informativa e accettato le nostre modalità di testing.
+                    <br>
+                    Ti abbiamo inviato un'email all'indirizzo da te indicato con in allegato una copia.
+                </h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}

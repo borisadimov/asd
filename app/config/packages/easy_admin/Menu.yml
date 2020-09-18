@@ -1,0 +1,6 @@
+easy_admin:
+  design:
+    menu:
+      - { label: "Dashboard", route: "admin_dashboard", default: true, icon: "general" }
+      - { label: "Privacy", permission: ROLE_ADMIN , icon: "user-secret", children: [ { label: "Form", permission: ROLE_ADMIN , entity: "DynamicForm", icon: "user-secret" }, { label: "Lista privacy", permission: ROLE_ADMIN , entity: "PrivacyUser", icon: "user-circle" } ] }
+      - { label: "Candidates", permission: ROLE_ADMIN_CANDIDATE , icon: "file-contract", children: [ { label: "Candidate", permission: ROLE_ADMIN_CANDIDATE , entity: "CandidateUser", icon: "file-contract" } ] }

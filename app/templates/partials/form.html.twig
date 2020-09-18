@@ -1,0 +1,75 @@
+<form class="form js-form" novalidate>
+	<legend class="form__legend">
+		<h2 class="form__title">LET’S KEEP IN TOUCH</h2>
+		<p class="form__paragraph">Abbiamo il dono dell'ubiquità, ma se cerchi
+			i nostri uffici sono in via Spartaco 11, 20135 Milano.<br>
+			<strong>Scrivici per ogni tipo di informazione.</strong>
+		</p>
+	</legend>
+	<fieldset class="form__fieldset js-form-fieldset">
+		<div class="form__labels js-form-to-hide-on-result">
+			<div class="form__labels__scroller js-form-labels">
+				<span class="form__label">Il tuo nome?</span>
+				<span class="form__label">La tua email?</span>
+				<span class="form__label">Il tuo telefono?</span>
+				<span class="form__label">Il tuo messaggio?</span>
+				<span class="form__label form__captcha-text"></span>
+			</div>
+		</div>
+		<div class="form__inputs js-form-inputs js-form-to-hide-on-result">
+			<input class="form__input" type="text"/>
+			<textarea class="form__textarea"></textarea>
+			<button class="form__submit" type="submit"></button>
+		</div>
+		<div class="form__last-step js-form-last-step js-form-to-hide-on-result">
+			<div class="form__last-step__block">
+				<label for="form-checkbox" class="form__checkbox">
+					<input id="form-checkbox" class="form__checkbox__input" type="checkbox" value="1"/>
+					<span class="form__checkbox__custom-input"></span>
+					<span class="form__checkbox__label form__captcha-text">Come indicato nell’<a href="/privacy-policy" target="_blank">informativa</a>, autorizzo al trattamento dei miei dati personali</span>
+				</label>
+			</div>
+			<div class="form__last-step__block">
+				<div class="form__captcha js-captcha"></div>
+			</div>
+			<button class="form__send js-form-send" type="submit" disabled>INVIA</button>
+		</div>
+		<span class="form__error js-form-error-message js-form-to-hide-on-result">&nbsp;</span>
+		<div class="form__result js-form-result">
+			<div class="form__result__smile"></div>
+			<div class="form__result__text">
+				<h2 class="form__result__title">Messaggio inviato correttamente.</h2>
+				<p class="form__result__paragraph">Ti risponderemo il prima possibile.<br/>Grazie!</p>
+			</div>
+		</div>
+	</fieldset>
+	<div class="form__pagination js-form-to-hide-on-result">
+		<div class="form__pagination__item is-active">
+			<div class="form__pagination__dot js-form-pagination-dot"></div>
+			<div class="form__pagination__text js-form-pagination-text"></div>
+		</div>
+		<div class="form__pagination__item">
+			<div class="form__pagination__dot js-form-pagination-dot"></div>
+			<div class="form__pagination__text js-form-pagination-text"></div>
+		</div>
+		<div class="form__pagination__item">
+			<div class="form__pagination__dot js-form-pagination-dot"></div>
+			<div class="form__pagination__text js-form-pagination-text"></div>
+		</div>
+		<div class="form__pagination__item">
+			<div class="form__pagination__dot js-form-pagination-dot"></div>
+			<div class="form__pagination__text js-form-pagination-text"></div>
+		</div>
+		<div class="form__pagination__item">
+			<div class="form__pagination__dot form__pagination__dot--last js-form-pagination-dot"></div>
+			<div class="form__pagination__text js-form-pagination-text"></div>
+		</div>
+	</div>
+
+	<div class="form__advice js-form-advice">
+		<div class="form__paragraph">
+			<strong class="form__advicebold">Vuoi lavorare con noi?</strong>
+			Mandaci la tua candidatura a <a href="mailto:job@jungl.es" target="_blank" class="form__advicelink">job@jungl.es</a>
+		</div>
+	</div>
+</form>

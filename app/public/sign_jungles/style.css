@@ -1,0 +1,181 @@
+ss* { margin: 0; padding: 0; }
+body { font-family: 'LucidaGrande', 'Arial', sans-serif; font-size: 10px; padding: 10px; overflow-x:hidden;  }
+
+body.hidden {
+	overflow: hidden !important;
+}
+
+form { padding: 50px; max-width: 800px; margin: 0 auto; }
+label { float: left; }
+
+label span { font-size: 12px; text-transform: lowercase; display: block; padding: 5px 0 }
+
+input { padding: 4px; border: 0; border-bottom: 1px solid #000; font-size: 14px; width: 100%; margin-bottom: 10px; outline: none; height: 30px; font-weight: bold; /*text-transform: uppercase; */}
+label { font-size: 14px; text-transform: uppercase; }
+select { width: 100%; }
+input.ng-pristine { border-color: #000000 !important; background: none !important }
+input.ng-invalid { border-color: red }
+input.ng-valid, input.ng-valid-number, input.done { background: url('img/check.png') right 48% no-repeat }
+
+input.ng-invalid { background: none !important }
+
+input.empty { background: none; }
+
+button { background: #000; color: #fff; padding: 10px 25px; border: 0; font-size: 13px; text-transform: uppercase; width: 200px; margin: 30px auto; display: block; }
+#area-wrapper { display: none; border: 1px solid #999; padding: 1%; width: 99%; }
+#area { width: 100%; }
+
+form p { padding: 4px 4px 23px; border-bottom: 1px solid #000; width: 100%; }
+form p.true { background: url('img/check.png') right 4px no-repeat; }
+label { text-transform: uppercase; color: #999; font-weight: bold; display: block; margin-bottom: 8px; font-size: 14px; }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.signature-wrapper { width:fit-content; margin: 0 auto }
+
+.animation.ng-hide-add     { -webkit-animation:0.5s bounceOut ease; animation:0.5s bounceOut ease; }
+.animation.ng-hide-remove  { -webkit-animation:0.5s bounceIn ease; animation:0.5s bounceIn ease; }
+
+
+a.return {color: #000; font-weight: bold}
+
+.help {
+  display: block;
+  width: 140px;
+  margin: 0 auto;
+  position: fixed;
+  top: 9px;
+  right: 4px;
+  -webkit-animation: blink 2s 3;
+  animation: blink 2s 3;
+
+  color: #000;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.help img{ display: inline-block; width: 21px; position: relative; top: 5px; padding-right: 4px;}
+
+#tutorial .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 39px;
+  display: block;
+  cursor: pointer;
+  margin:0;
+}
+
+#tutorial {
+	position: absolute;
+	width: 100%;
+	background:#fff;
+	z-index: 2;
+	box-sizing:border-box;
+	padding:30px;
+	top: 0;
+	left:100%;
+	height: 100%;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	opacity: 0;
+	 -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition:         all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: scroll;
+
+}
+
+
+
+.tutorial-content {
+	width: 90%;
+	margin:0 auto;
+	text-align: left;
+	max-width: 900px;
+}
+
+#tutorial.enter {
+	left: 0;
+	opacity: 1;
+  -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition:         all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+
+#tutorial h2 {
+	  font-size: 30px;
+  padding-bottom: 20px;
+  font-weight: bolder;
+  border-bottom: 1px solid;
+  margin-bottom: 30px
+}
+
+#tutorial h3 {
+	font-size: 18px
+}
+
+#tutorial p {
+	font-size: 14px;
+	margin-bottom: 30px;
+	float: none;
+	position: relative;
+	padding-left: 48px;
+	padding-top: 9px;
+	line-height: 18px;
+}
+
+#tutorial p.pre {
+	padding-left: 0;
+}
+
+
+#tutorial img {
+	display: block;
+	width: 100%;
+	max-width: 800px;
+	margin: 40px auto;
+}
+
+#tutorial span {
+	  background: #000;
+  color: #fff;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 20px;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  display: block;
+  float: left;
+  margin-right: 2%;
+  position: absolute;
+  top: 0;
+  left:0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#tutorial article { position: relative;}
+
+
+
+
+
+@-webkit-keyframes blink {
+	0% { opacity: 1 }
+	50% {opacity: 0}
+	100% { opacity: 1 }
+}
+
+@keyframes blink {
+	0% { opacity: 1 }
+	50% {opacity: 0}
+	100% { opacity: 1 }
+}

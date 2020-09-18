@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+	{# <article class="content" data-id="contact" style="z-index:9999;background:#fff;display:block;">
+		<div class="contact">
+			<div class="contact__back">BACK</div>
+			<div class="contact__background"></div>
+		</div>
+	</article> #}
+
+	<main class="main js-app" data-route="">
+		<header class="header js-header">
+			{% include 'partials/mainmenu.html.twig' %}
+			{% include 'partials/logo.html.twig' with {'className':  'js-logo'} %}
+		</header>
+
+		{% include 'partials/intro.html.twig' with {'className': 'js-intro-logo'} %}
+
+		<div class="js-gesture">
+
+			{% include 'partials/title.html.twig' %}
+
+			<section class="section js-content">
+				{% include 'sections/play.html.twig' %}
+				{% include 'sections/study.html.twig' %}
+				{% include 'sections/think.html.twig' %}
+				{% include 'sections/move.html.twig' %}
+				{% include 'sections/connect.html.twig' %}
+				{% include 'sections/contact.html.twig' %}
+			</section>
+
+			<div class="pagination js-numbers-pagination">
+				<div class="pagination__item" data-id="study">01</div>
+				<div class="pagination__item" data-id="think">02</div>
+				<div class="pagination__item" data-id="move">03</div>
+				<div class="pagination__item" data-id="connect">04</div>
+				<div class="pagination__item" data-id="contact">05</div>
+
+				<div class="pagination__subline js-numbers-pagination-line"></div>
+			</div>
+
+			<div class="bar js-bar-filler">
+				<div class="bar__filler"></div>
+			</div>
+
+			<div class="scroll-suggestion js-scroll-suggestion">
+				<span class="scroll-suggestion__text page-paragraph">scroll</span>
+				<div class="scroll-suggestion__media">
+					{% include 'svg/scroll.html.twig' %}
+				</div>
+			</div>
+
+			{% include 'svg/blob.html.twig' %}
+		</div>
+	</main>
+{% endblock %}

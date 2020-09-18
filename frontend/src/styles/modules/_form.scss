@@ -1,0 +1,561 @@
+.form {
+  background-color: $color-violet;
+  padding: rem(40) rem(24) rem(40);
+}
+
+.form__legend {
+  text-align: center;
+  padding-bottom: rem(32);
+  margin: 0 auto;
+  transition: padding 0.3s ease-out 0s;
+
+  @include breakpoint($breakpoint-tablet) {
+    padding-bottom: rem(70);
+  }
+
+  .is-last-step & {
+    padding-bottom: rem(24);
+  }
+}
+
+.form__title {
+  font-family: $font-bold;
+  font-size: rem(36);
+  color: $color-green;
+  padding-bottom: rem(18);
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(44);
+    padding-bottom: rem(24);
+  }
+}
+
+.form__paragraph {
+  font-family: $font-regular;
+  font-size: rem(14);
+  line-height: rem(18);
+  color: $color-white;
+  max-width: rem(490);
+  margin: 0 auto;
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(20);
+    line-height: rem(25);
+  }
+}
+
+.form__fieldset {
+  position: relative;
+  width: 100%;
+  max-width: rem(678);
+  margin: 0 auto rem(16);
+
+  @include breakpoint($breakpoint-tablet) {
+    margin: 0 auto rem(32);
+  }
+}
+
+.form__labels {
+  height: rem(30);
+  margin-bottom: rem(10);
+  overflow: hidden;
+  transition: height 0.3s ease-out 0s;
+
+  .is-last-step & {
+    height: rem(0);
+  }
+
+  @include breakpoint($breakpoint-tablet) {
+    height: rem(30);
+  }
+}
+
+.form__labels__scroller {
+  position: relative;
+}
+
+.form__label {
+  display: block;
+  font-family: $font-regular;
+  font-weight: $weight-bold;
+  font-size: rem(18);
+  color: $color-white;
+  padding-bottom: rem(16);
+  padding-left: rem(32);
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(22);
+  }
+}
+
+.form__inputs {
+  width: 100%;
+  position: relative;
+}
+
+.form__input {
+  position: absolute;
+  width: 100%;
+  height: rem(60);
+  top: 0;
+  left: 0;
+  border-radius: rem(30);
+  background-color: $color-white;
+  border: 1px solid $color-white;
+  box-shadow: none;
+  font-size: rem(16);
+  font-family: $font-regular;
+  font-weight: $weight-semibold;
+  padding-left: rem(32);
+  padding-right: rem(132);
+  transition: all 0.3s ease-out 0s;
+  z-index: 2;
+  appearance: none;
+
+  .has-textarea & {
+    pointer-events: none;
+    z-index: 1;
+    display: none;
+  }
+
+  .has-error & {
+    background-color: #ffd6d6;
+    border-color: red;
+  }
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(22);
+  }
+}
+
+.form__textarea {
+  position: relative;
+  width: 100%;
+  height: rem(60);
+  top: 0;
+  left: 0;
+  border-radius: rem(30);
+  border: 1px solid $color-white;
+  padding: rem(16) rem(132) rem(16) rem(32);
+  margin-bottom: rem(12);
+  font-family: $font-regular;
+  font-size: rem(16);
+  resize: none;
+  pointer-events: none;
+  z-index: 1;
+  transition: height 0.3s ease-out 0s;
+  appearance: none;
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(22);
+    overflow: hidden;
+  }
+
+  .has-textarea & {
+    z-index: 2;
+    height: rem(140);
+    pointer-events: all;
+  }
+
+  .has-error & {
+    background-color: #ffd6d6;
+    border-color: red;
+  }
+}
+
+.form__submit {
+  position: absolute;
+  display: block;
+  width: rem(30);
+  height: rem(30);
+  top: rem(15);
+  right: rem(24);
+  border: none;
+  box-shadow: none;
+  z-index: 3;
+  background: url(../images/arrow.svg) no-repeat right center;
+  background-size: contain;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.form__error {
+  position: relative;
+  font-family: $font-regular;
+  font-size: rem(14);
+  display: inline-block;
+  padding-left: rem(32);
+  color: red;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(0, 100%, 0);
+  transition: all 0.3s ease-in-out 0s;
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(16);
+  }
+
+  .has-error & {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .is-last-step & {
+    bottom: rem(-82);
+    display: block;
+    text-align: center;
+    padding-left: 0;
+
+    @include breakpoint($breakpoint-tablet) {
+      bottom: rem(-20);
+    }
+  }
+}
+
+.form__last-step {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% - #{rem(64)});
+  left: rem(32);
+  padding-bottom: rem(100);
+  opacity: 0;
+  pointer-events: none;
+
+  @include breakpoint($breakpoint-tablet) {
+    padding-bottom: rem(120);
+  }
+}
+
+.form__last-step__block {
+  text-align: center;
+
+  .form__last-step__block + & {
+    padding-top: rem(16);
+
+    @include breakpoint($breakpoint-tablet) {
+      padding-top: rem(28);
+    }
+  }
+}
+
+.form__checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: rem(16);
+  max-width: rem(400);
+
+  @include breakpoint($breakpoint-ipad) {
+    margin-bottom: rem(20);
+  }
+}
+
+.form__checkbox__input {
+  position: absolute;
+  opacity: 0;
+}
+
+.form__checkbox__custom-input {
+  position: relative;
+  display: block;
+  width: rem(28);
+  height: rem(28);
+  border-radius: rem(5);
+  background-color: $color-white;
+  border: 1px solid transparent;
+  margin-right: rem(12);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    background: url('../images/checkbox.svg') no-repeat center center
+      $color-green;
+    background-size: 70%;
+    border: none;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    transition: transform 0.3s ease-out 0s;
+  }
+
+  :checked + & {
+    &:before {
+      transform: translate3d(-50%, -50%, 0) scale(1);
+    }
+  }
+
+  .has-error & {
+    background-color: #ffd6d6;
+    border-color: red;
+  }
+}
+
+.form__checkbox__label {
+  display: inline-block;
+  font-family: $font-regular;
+  color: $color-white;
+  font-size: rem(14);
+  width: calc(100% - #{rem(40)});
+  text-align: left;
+
+  @include breakpoint($breakpoint-tablet) {
+    font-size: rem(18);
+    text-align: center;
+  }
+}
+
+.form__link {
+  display: inline-block;
+  font-family: $font-regular;
+  color: $color-green;
+  font-size: rem(18);
+}
+
+.form__captcha-text {
+  text-align: left;
+
+  a {
+    color: $color-green;
+  }
+}
+
+.form__captcha {
+  color: $color-white;
+  height: 0;
+  overflow: hidden;
+}
+
+.form__send {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  max-width: rem(448);
+  height: rem(60);
+  bottom: rem(6);
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: rem(30);
+  font-family: $font-regular;
+  font-size: rem(22);
+  font-weight: $weight-semibold;
+  line-height: rem(66);
+  color: $color-violet;
+  background-color: $color-green;
+  border: none;
+  box-shadow: none;
+  transition: all 0.3s ease-out 0s;
+  cursor: pointer;
+
+  @include breakpoint($breakpoint-tablet) {
+    bottom: 0;
+  }
+
+  &[disabled] {
+    opacity: 30%;
+    pointer-events: none;
+    background-color: $color-white;
+  }
+}
+
+.form__pagination {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-bottom: 80px;
+  }
+}
+
+.form__pagination__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.form__pagination__dot {
+  position: relative;
+  width: rem(20);
+  height: rem(20);
+  border-radius: 50%;
+  margin-left: rem(16);
+  margin-right: rem(16);
+  cursor: pointer;
+
+  :first-child > & {
+    margin-left: 0;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: rem(16);
+    height: rem(16);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    top: 50%;
+    left: 50%;
+    background-color: $color-white;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 0.3s ease-out 0s;
+  }
+
+  .is-active > & {
+    pointer-events: none;
+
+    &:after {
+      width: 100%;
+      height: 100%;
+      background-color: $color-green;
+    }
+
+    .has-error & {
+      &:after {
+        background-color: red;
+      }
+    }
+  }
+
+  .is-active ~ * > & {
+    pointer-events: none;
+    &:after {
+      background-color: transparent;
+      border-color: $color-white;
+      opacity: 0.4;
+    }
+  }
+
+  .is-active + * > & {
+    pointer-events: none;
+    &:after {
+      background-color: transparent;
+      border-color: $color-white;
+      opacity: 0.4;
+    }
+  }
+
+  .is-submitted & {
+    width: rem(16);
+    height: rem(16);
+    background-color: $color-white;
+    opacity: 0.2;
+    &:after {
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+  }
+}
+
+.form__pagination__dot--last {
+  margin-right: 0;
+  border-color: transparent;
+  background: url(../images/smile_mini.svg) center center;
+  background-size: cover;
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-right: rem(16);
+  }
+
+  .is-active > & {
+    background: url(../images/smile.svg) center center;
+    background-color: transparent;
+
+    &:after {
+      background-color: transparent;
+    }
+  }
+}
+
+.form__pagination__text {
+  width: 0;
+  font-family: $font-regular;
+  font-size: rem(22);
+  color: $color-white;
+  transition: opacity 0.3s ease-out 0s;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0.4;
+}
+
+.form__result {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  transform: translateY(rem(100));
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-top: 20px;
+  }
+}
+
+.form__result__smile {
+  width: rem(40);
+  height: rem(40);
+  background-color: red;
+  margin-bottom: rem(22);
+  background: url(../images/smile.svg) no-repeat center center;
+  background-size: cover;
+}
+
+.form__result__text {
+  text-align: center;
+}
+
+.form__result__title {
+  font-family: $font-regular;
+  font-weight: $weight-semibold;
+  color: $color-green;
+  font-size: rem(26);
+  padding-bottom: rem(16);
+}
+
+.form__result__paragraph {
+  font-family: $font-regular;
+  font-weight: $weight-semibold;
+  color: $color-white;
+  font-size: rem(22);
+  line-height: rem(20);
+
+  @include breakpoint($breakpoint-tablet) {
+    line-height: rem(25);
+  }
+}
+
+.form__advice {
+  color: $color-white;
+  text-align: center;
+}
+
+.form__advicebold {
+  display: block;
+}
+
+.form__advicelink {
+  color: $color-white;
+  text-decoration: underline;
+  text-decoration-color: $color-green;
+}

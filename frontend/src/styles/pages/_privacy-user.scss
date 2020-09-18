@@ -1,0 +1,389 @@
+.privacy-user {
+  font-family: $font-regular;
+  padding: rem(40) 0;
+
+  .container {
+    @include breakpoint($breakpoint-ipad) {
+      max-width: rem(1140);
+      margin: 0 auto;
+    }
+  }
+
+  hr {
+    display: none;
+    border-color: $color-black;
+  }
+
+  &.is-printable {
+    hr {
+      display: block;
+    }
+  }
+}
+
+.privacy-user__logo {
+  .logo {
+    opacity: 1;
+
+    path {
+      fill: $color-black;
+      stroke: $color-black;
+    }
+
+    .foglia {
+      fill: $color-green;
+      stroke: $color-green;
+    }
+  }
+}
+
+.privacy-user__title {
+  font-family: $font-bold;
+  font-size: rem(20);
+  line-height: 1.5;
+
+  @include breakpoint($breakpoint-ipad) {
+    font-size: rem(28);
+  }
+
+  .privacy-user--typ & {
+    padding-top: 20vh;
+  }
+
+  .is-printable & {
+    font-weight: bold;
+  }
+}
+
+.privacy-user__title--main {
+  text-align: center;
+}
+
+.privacy-user__section {
+  padding: rem(20) rem(10);
+  border-bottom: 1px solid $color-black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .is-printable & {
+    display: block;
+  }
+}
+
+.privacy-user__section--no-border {
+  border-bottom: none;
+}
+
+.privacy-user__section__title {
+  width: 100%;
+  flex-basis: 100%;
+  font-family: $font-bold;
+  font-size: rem(18);
+  padding-right: rem(15);
+  line-height: 1.5;
+
+  @include breakpoint($breakpoint-ipad) {
+    width: 25%;
+    flex-basis: 25%;
+    font-size: rem(22);
+
+    .privacy-user__section--full & {
+      width: 100%;
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+
+  .is-printable & {
+    width: 100% !important;
+    flex-basis: 100% !important;
+    text-align: center !important;
+    padding: 0;
+    font-weight: bold !important;
+  }
+}
+
+.privacy-user__section__content {
+  width: 100%;
+  flex-basis: 100%;
+
+  @include breakpoint($breakpoint-ipad) {
+    width: 75%;
+    flex-basis: 75%;
+
+    .privacy-user__section--full & {
+      width: 100%;
+      flex-basis: 100%;
+    }
+  }
+
+  p {
+    font-size: rem(16);
+    margin-bottom: rem(5);
+    line-height: 1.5;
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(18);
+    }
+  }
+
+  .is-printable & {
+    width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+
+.privacy-user__list {
+  padding: rem(10) 0;
+
+  li {
+    padding-left: rem(20);
+    position: relative;
+    line-height: 1.5;
+    font-size: rem(16);
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(18);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(5);
+    }
+
+    &:before {
+      content: '-';
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+.privacy-user__table {
+  thead {
+    font-size: rem(18);
+    font-family: $font-bold;
+    border-bottom: 1px solid $color-black;
+    background-color: $color-gray;
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(22);
+    }
+
+    th {
+      height: rem(45);
+      vertical-align: middle;
+
+      @include breakpoint($breakpoint-ipad) {
+        width: 33.333%;
+      }
+    }
+  }
+
+  tbody {
+    font-size: rem(16);
+    line-height: 1.5;
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(18);
+    }
+
+    td {
+      margin-bottom: rem(10);
+      padding: rem(5);
+
+      @include breakpoint($breakpoint-ipad) {
+        padding: rem(10);
+      }
+    }
+
+    tr {
+      &:nth-child(even) {
+        background-color: $color-gray-light;
+      }
+    }
+  }
+
+  .is-printable & {
+    width: 100% !important;
+  }
+
+  table {
+    .is-printable & {
+      width: 100% !important;
+    }
+  }
+}
+
+.privacy-user__table--mobile {
+  @include breakpoint($breakpoint-ipad) {
+    display: none;
+  }
+
+  .is-printable & {
+    display: none !important;
+  }
+}
+
+.privacy-user__table--desktop {
+  display: none;
+
+  br {
+    display: none;
+
+    .is-printable & {
+      display: block;
+    }
+  }
+
+  @include breakpoint($breakpoint-ipad) {
+    display: block;
+  }
+}
+
+.privacy-user__form {
+  font-size: rem(16);
+  font-family: $font-regular;
+
+  @include breakpoint($breakpoint-ipad) {
+    font-size: rem(18);
+  }
+
+  input[type='text'] {
+    font-family: $font-regular;
+    font-size: rem(16);
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    position: relative;
+    width: rem(200);
+    margin: 0 rem(3);
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(18);
+    }
+
+    .is-printable & {
+      display: none;
+    }
+  }
+
+  input[type='email'] {
+    font-family: $font-regular;
+    font-size: rem(16);
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    position: relative;
+    width: 100% !important;
+    margin: 0 rem(3);
+
+    @include breakpoint($breakpoint-tablet) {
+      width: rem(300) !important;
+    }
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(18);
+      width: rem(400) !important;
+    }
+
+    .is-printable & {
+      display: none;
+    }
+  }
+
+  label,
+  input[type='checkbox'] {
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+  }
+
+  input[type='radio'] {
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+  }
+
+  p {
+    font-size: rem(16);
+    margin-bottom: rem(5);
+    line-height: 1.5;
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(18);
+    }
+  }
+}
+
+.privacy-user__form__errors {
+  color: $color-red;
+  font-size: rem(16);
+
+  @include breakpoint($breakpoint-ipad) {
+    font-size: rem(18);
+  }
+}
+
+.privacy-user__form__submit {
+  padding: rem(20) 0;
+
+  @include breakpoint($breakpoint-ipad) {
+    padding: rem(35) 0;
+  }
+
+  button {
+    width: rem(200);
+    height: rem(45);
+    margin: 0 auto;
+    padding-top: rem(10);
+    background-color: $color-green;
+    color: $color-black;
+    font-family: $font-bold;
+    font-size: rem(16);
+    -webkit-appearance: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out 0s, background-color 0.2s ease-in-out 0s;
+
+    .no-touch & {
+      &:hover {
+        color: $color-white;
+        background-color: $color-green-dark;
+      }
+    }
+
+    @include breakpoint($breakpoint-ipad) {
+      font-size: rem(20);
+    }
+  }
+
+  .is-printable & {
+    display: none !important;
+  }
+}
+
+.privacy-user__footer {
+  text-align: center;
+  font-size: rem(14);
+  padding: rem(10);
+  line-height: 1.5;
+
+  @include breakpoint($breakpoint-ipad) {
+    padding: rem(20);
+    font-size: rem(16);
+  }
+
+  .is-printable & {
+    width: 100%;
+  }
+}
+
+.privacy-user__mail {
+  display: inline-block;
+  height: 23px;
+
+  img {
+    height: 100%;
+    vertical-align: middle;
+  }
+}

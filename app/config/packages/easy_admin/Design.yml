@@ -1,0 +1,8 @@
+easy_admin:
+  design:
+    brand_color: "#264148"
+    form_theme:
+      - "@EasyAdmin/form/bootstrap_4.html.twig"
+    assets:
+      css:
+        - "app/admin/css/global.css"

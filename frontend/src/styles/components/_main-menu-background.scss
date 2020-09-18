@@ -1,0 +1,12 @@
+.main-menu-background {
+  background: $color-green;
+  width: rem(260);
+  height: rem(260);
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 101;
+
+  display: none;
+}

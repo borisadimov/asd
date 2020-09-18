@@ -1,0 +1,223 @@
+.background {
+  z-index: 0;
+}
+
+.background__icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    position: absolute;
+  }
+}
+
+.background__icons--leaf {
+  position: absolute;
+  width: rem(550);
+  left: 50%;
+  bottom: rem(-576);
+  transform: translate(-50%, 0) scale(0.8);
+  height: rem(576);
+
+  @include breakpoint($breakpoint-ipad) {
+    width: rem(750);
+    bottom: auto;
+    top: 100%;
+    left: calc(50% - 28px);
+  }
+
+  svg:not(:root) {
+    overflow: visible;
+  }
+
+  svg {
+    transform-box: fill-box;
+  }
+
+  path {
+    fill: $color-black;
+    stroke: $color-green;
+    stroke-width: rem(3);
+  }
+}
+
+.background__icons--study {
+  svg {
+    &:first-child {
+      top: rem(20);
+      left: rem(-90);
+      transform: scale(0.54) rotate(-60deg);
+
+      @include breakpoint($breakpoint-tablet) {
+        top: rem(42);
+        left: rem(16);
+        transform: scale(1) rotate(0deg);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        top: rem(-28);
+        left: rem(16);
+        transform: scale(1) rotate(0deg);
+      }
+
+      @include breakpoint($breakpoint-ipad-next) {
+        top: rem(22);
+        left: rem(106);
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    &:last-child {
+      bottom: rem(-90);
+      right: rem(-50);
+      transform: scale(0.6) rotate(0deg);
+
+      @include breakpoint($breakpoint-tablet) {
+        bottom: rem(38);
+        right: rem(20);
+        transform: scale(1) rotate(-60deg);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        bottom: rem(-32);
+        right: rem(6);
+        transform: scale(1) rotate(-60deg);
+      }
+
+      @include breakpoint($breakpoint-ipad-next) {
+        bottom: rem(38);
+        right: rem(106);
+        transform: scale(1) rotate(-60deg);
+      }
+    }
+  }
+}
+
+.background__icons--think {
+  svg {
+    &:first-child {
+      top: rem(36);
+      left: rem(-53);
+      transform: scale(0.68);
+
+      @include breakpoint($breakpoint-tablet) {
+        top: rem(0);
+        left: rem(86);
+        transform: scale(1);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        top: rem(0);
+        left: rem(112);
+      }
+    }
+
+    &:last-child {
+      bottom: rem(-74);
+      right: rem(-70);
+      transform: scale(0.6) rotate(180deg);
+
+      @include breakpoint($breakpoint-tablet) {
+        bottom: rem(-7);
+        right: rem(40);
+        transform: scale(1) rotate(180deg);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        bottom: rem(0);
+        right: rem(110);
+      }
+    }
+  }
+}
+
+.background__icons--move {
+  svg {
+    &:first-child {
+      top: rem(-58);
+      left: rem(-150);
+      transform: scale(0.47);
+
+      @include breakpoint($breakpoint-tablet) {
+        top: rem(-36);
+        left: rem(-60);
+        transform: scale(0.7);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        top: rem(-66);
+        left: rem(-10);
+        transform: scale(1);
+      }
+    }
+
+    &:last-child {
+      bottom: rem(-204);
+      right: rem(-96);
+      transform: scale(0.47) rotate(180deg);
+
+      @include breakpoint($breakpoint-tablet) {
+        bottom: rem(-38);
+        right: rem(-36);
+        transform: scale(0.7) rotate(180deg);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        bottom: rem(-78);
+        right: rem(24);
+        transform: scale(0.88) rotate(180deg);
+      }
+    }
+  }
+}
+
+.background__icons--connect {
+  svg {
+    &:first-child {
+      top: rem(32);
+      left: rem(-32);
+      transform: scale(0.57);
+
+      @include breakpoint($breakpoint-tablet) {
+        top: rem(90);
+        left: rem(10);
+        transform: scale(1);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        top: rem(10);
+        left: rem(110);
+      }
+
+      @include breakpoint($breakpoint-ipad-next) {
+        top: rem(30);
+        left: rem(154);
+        transform: scale(1);
+      }
+    }
+
+    &:last-child {
+      bottom: rem(-68);
+      right: rem(-35);
+      transform: scale(0.6);
+
+      @include breakpoint($breakpoint-tablet) {
+        bottom: rem(50);
+        right: rem(70);
+        transform: scale(1);
+      }
+
+      @include breakpoint($breakpoint-ipad) {
+        bottom: rem(20);
+        right: rem(110);
+      }
+
+      @include breakpoint($breakpoint-ipad-next) {
+        bottom: rem(66);
+        right: rem(160);
+        transform: scale(1);
+      }
+    }
+  }
+}

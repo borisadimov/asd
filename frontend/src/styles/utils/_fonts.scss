@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'DINCondensed-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DINCondensed-Bold'),
+    url('#{$assets}/fonts/DINCondensed-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'HKGrotesk-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('HKGrotesk-Regular'),
+    url('#{$assets}/fonts/HKGrotesk-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'HKGrotesk-Regular';
+  font-style: normal;
+  font-weight: 600;
+  src: local('HKGrotesk-SemiBold'),
+    url('#{$assets}/fonts/HKGrotesk-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'HKGrotesk-Regular';
+  font-style: normal;
+  font-weight: 700;
+  src: local('HKGrotesk-Bold'),
+    url('#{$assets}/fonts/HKGrotesk-Bold.woff') format('woff');
+}

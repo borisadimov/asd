@@ -1,0 +1,30 @@
+easy_admin:
+  entities:
+    DynamicForm:
+      disabled_actions: ["delete"]
+      class: App\Entity\DynamicForm
+      label: "Form"
+      list:
+        role: ROLE_ADMIN
+        fields:
+          - { property: "id", label: "Id" }
+          - { property: "slug", label: "Slug" }
+          - { property: "dynamicUrl", label: "Dynamic Url", template: "bundles/EasyAdminBundle/default/privacy-slug.html.twig" }
+          - { property: "privacySectionContent", label: "Contenuto Dinamico privacy" }
+          - { property: "createdAt", label: "Data di creazione" }
+      form:
+        role: ROLE_ADMIN
+        fields:
+          - { type: "group", label: "General", columns: 12, icon: "info-circle"}
+          - { property: "slug", label: "Slug", columns: 4 }
+          - { property: "privacySectionContent", label: "Contenuto Dinamico privacy", columns: 12 }
+      search:
+        role: ROLE_ADMIN
+      new:
+        role: ROLE_ADMIN
+      edit:
+        role: ROLE_ADMIN
+      show:
+        role: ROLE_ADMIN
+      delete:
+        role: ROLE_ADMIN

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="signature">
+	<head>
+
+		<title>JUNGLES | SIGNATURE email </title>
+
+		<link rel="stylesheet" href="animate.css">
+		<link rel="stylesheet" href="bower_components/Selecter/jquery.fs.selecter.css">
+
+		<link rel="stylesheet" href="style.css">
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+
+		<script src="bower_components/Selecter/jquery.fs.selecter.min.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.0/TweenMax.min.js"></script>
+
+
+	</head>
+	<body ng-controller="SignatureController">
+
+
+		<div class="signature-wrapper">
+
+			<style type="text/css">
+			.gt a { color: #000000 !important }
+			.ii a[href] { color: #000000 !important }
+			</style>
+
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+			<meta name="format-detection" content="telephone=no">
+
+			<br/>
+			<br/>
+			
+
+			<table cellspacing="0" cellpadding="0" border="0" style="border-spacing:0px;border-collapse:collapse; margin: 0;">
+			    <tbody>
+			        <!-- Logo -->
+			        <tr valign="top" width="170" style="padding:6px 8px 0px 0px;vertical-align:top;">
+			            <a style="display:block" href="http://www.jungl.es/">
+			                <img style="display:block; border:0;" width="170" src="https://www.jungl.es/sign_jungles/img/logo_black.png" alt="Jungles">
+			            </a>
+			        </tr>
+			        <tr>
+			            <td valign="top" width="" style="font-size:1em;padding:10px 15px 0px 15px;vertical-align:top">
+			                <table cellspacing="0" cellpadding="0" border="0" style="border-spacing:0px;border-collapse:collapse;line-height:1.4;font-family:Verdana,Geneva,sans-serif;font-size:10.4px;color:rgb(0,0,0)">
+			                    <tbody>
+			                        <!-- Name -->
+			                        <tr>
+			                            <td>
+			                                <div style="font-stretch:normal;font-size:1.2em;line-height:normal;font-family:Verdana,Geneva,sans-serif;text-transform:capitalize !important; color:rgb(00,00,00);padding: 0 0 0 0">
+			                                    <span class="name ng-binding">{{name | lowercase}}</span>
+			                                </div>
+			                            </td>
+			                        </tr>
+			                        <!-- Job -->
+			                        <tr>
+			                            <td style="padding:4px 0px;">
+			                                <div style="font-family:Verdana,Geneva,sans-serif;">
+			                                    <strong><span class="role ng-binding" style="color:rgb(00,00,00); text-decoration:none !important; border-bottom:2px solid rgb(11,255,174)">{{role}}</span> | Jungles</strong>
+			                                </div>
+			                            </td>
+			                        </tr>
+			                        <!-- Contacts -->
+			                        <tr>
+			                            <td>
+			                                <div style="padding-top: 4px; text-transform:lowercase !important;">
+			                                    <span style="font-family:Verdana,Geneva,sans-serif;color:rgb(141,141,141);">email:</span>
+												<a style="color:rgb(0,0,0);font-family:Verdana,Geneva,sans-serif; text-decoration:none !important;" target="_blank" href="mailto:{{email}}" class="ng-binding">{{email}}</a>
+												<br>
+			                                </div>
+
+											<div style="padding-top: 2px">
+												<span style="font-family: Verdana, Geneva, sans-serif; color:rgb(141,141,141);" ng-show="phone" class="">phone:</span>
+												<a style="color:rgb(0,0,0);font-family:Verdana,Geneva,sans-serif; text-decoration:none !important;" target="_blank" href="tel:{{ formtPhone }}" class="ng-binding">
+			                                    <span ng-show="phone" class="ng-binding">{{ formtPhone }}</span>
+																				</a>
+												<br ng-show="phone">
+											</div>
+
+											<div style="padding-top: 2px">
+												<span style="font-family: Verdana, Geneva, sans-serif; color:rgb(141,141,141);" class="">indirizzo:</span>
+			                                    <span>Via Spartaco, 11 - 20135 Milan, Italy</span>
+												<br>
+											</div>
+
+											<div style="padding-top: 2px">
+												<span style="font-family:Verdana,Geneva,sans-serif; color:rgb(141,141,141)">site:</span>
+												<span style="font-family:Verdana,Geneva,sans-serif; text-decoration:none !important;"><a href="https://www.jungl.es/" style="color:rgb(0,0,0); text-decoration: none;" target="_blank">www.jungl.es</a></span>
+			                                </div>
+			                            </td>
+
+										<tr>
+											<td width="40" border="0" cellspacing="0" cellpadding="0" style="padding-top: 8px">
+												<span style="padding-top: 8px" class="social-linkedin"></span>
+												<span style="padding-top: 8px" class="social-instagram"></span>
+											</td>
+										</tr>
+
+			                        </tr>
+			                    </tbody>
+			                </table>
+			            </td>
+			        </tr>
+			    </tbody>
+			</table>
+
+	</div>
+
+
+
+
+
+
+
+	<form name="form">
+		<input minlength="3" ng-model="name" class="name" type="text" placeholder="Inserisci il tuo nome e cognome" value="Nome" required>
+
+		<p class="{{form.role.$valid}}">
+
+		<label for="role">JOB DESCRIPTION <span>(Selezionare voce, previa autorizzazione dei partners)</span></label>
+
+
+
+		<select ng-model="role" class="role" name="role" type="text" placeholder="Inserisci il tuo ruolo" required>
+			<option ng-repeat="role in roles" value="{{role}}">{{role}}</option>
+		</select>
+		</p>
+
+		<input ng-model="email" type="email" class="name" type="text" placeholder="Inserisci la tua email" required>
+
+		<!--<input name="tel" ng-model="tel" ng-init="tel='0236748250'" class="name {{ form.tel.$viewValue ? 'done' : 'empty' }}"
+		type="text" placeholder="Telefono Fisso" ng-pattern="/^\d+$/">-->
+
+		<input name="phone" ng-model="phone" class="name {{ form.phone.$viewValue ? 'yes' : 'empty' }}" type="text" placeholder="Mobile" ng-pattern="/^\d+$/">
+
+<p> <label>Social icons<label></p>
+		<label style="margin-right: 64px;"><input id="linkedin_checkbox" type="checkbox" style="width: 26px; vertical-align: middle;" >Includi LinkedIn</label>
+		<label><input id="instagram_checkbox" type="checkbox"  style="width: 26px; vertical-align: middle;" >Includi Instagram </label>
+
+
+
+		<button class="animation" ng-show="form.$valid" ng-click="generate()">genera codice</button>
+		<p id="area-wrapper" class="area-wrapper">
+		<code id="area"></code>
+		</p>
+
+	</form>
+	<!-- /form -->
+
+
+	<a href="#" class="help">HOW IT WORKS <img src="img/help.svg" alt=""></a>
+
+
+	<div id="tutorial">
+
+		<div class="tutorial-content">
+				<img class="close" src="img/close.svg" alt="">
+
+
+			<h2>COMINCIAMO:</h2>
+
+			<article>
+			<p class="pre">ci vuole un attimo di pazienza, ma siete tutti in grado di cavarvela ;-) <br>
+			Sotto le indicazioni per mettervi la firma su <strong>MAIL</strong>, se la volete mettere su gmail vi devo dare altre indicazioni.</p></article>
+
+			<article>
+			<span>1</span>
+			<p>Aprite <strong>Mail</strong> e andate su <strong>Preferenze > Firme</strong>, e selezionate l’Account a cui volete inserire la Firma (NON Tutte le firme),
+			clicca sul + e rinominate la firma creata in “Firma JUNGLES”.
+			Controllate di aver inserito la firma come Scegli Firma: "Firma Standard”
+			Salvate chiudendo la finestra “Preferenze”. <br>
+			<strong>Chiudete Mail.</strong></p>
+			</article>
+
+			<article>
+			<span>2</span>
+			<p>Ora, niente panico, andate sulla <strong>Mela in alto a sinistra, Preferenze di Sistema, Sicurezza e Privacy</strong> (prima riga)
+			Si apre un popup, dentro Generali in basso a sinistra trovate un lucchetto bloccato, sbloccatelo cliccandoci sopra e inserite la password del vostro computer e cliccate su Sblocca.
+			Dove trovate scritto “Consenti app scaricate da:” scegliete <strong>Dovunque</strong>,
+			si apre una popup, confermate <strong>Consenti da Dovunque</strong>. Poi chiudete la finestra.</p>
+			</article>
+
+			<article>
+			<span>3</span>
+			<p>Ora <a class="return" href="javascript:void(0)">tornate alla firma</a>
+			e componetela con:
+			Nome e Cognome
+			Selezionate la vostra Job Description
+			La vostra email
+			Inserite il vostro telefono fisso se lo avete oppure lasciare quello del centralino pre impostato
+			Il vostro cellulare (facoltativo)
+			Cliccate su Genera Codice e vi compare un codice, <strong>selezionatelo tutto e copiatelo</strong></p>
+			</article>
+
+			<article>
+
+			<span>4</span>
+			<p>Ora andate sul Finder, andate con il Mouse su “Vai” e quando la tendina scende, <strong>tenete premuto il tasto “Alt” della tastiera</strong>, e nel menu a tendina comparirà la voce “Libreria”, cliccateci sopra,
+			si aprirà la cartella Library (Libreria), poi entrate nella cartella Mail, poi nella cartella V2, andate dentro Maildata, e poi entrate dentro Signatures.</p>
+
+			</article>
+
+
+			<article>
+
+			<span>5</span>
+			<p>In questa cartella, dovreste trovare un file dal nome un po’ complesso alfanumerico… es: “ED56FGHILOOMecc… .mailsignature” che equivale all’ultima firma che avete creato al punto 1
+			Dovete cercare l’ultima appena creata, guardate la data di creazione.
+			Fate tasto destro su questo file, apri con "Altro” e cercate Textedit, selezionatelo e cliccate su Apri (se avete TextEdit nella barra del dock di sistema, basta che trascinate il file sull’icona i TextEdit)</p>
+
+			<span>6</span>
+			<p>Ora, attenzione, <strong>sostituite le righe comprese con e dopo il tag body</strong> con quanto avete copiato al punto 3
+
+			Dovrebbe venire fuori una cosa così:</p>
+
+			<img src="img/tutorial-1.png" alt="tutorial-1">
+
+			</article>
+
+			<article>
+			<span>7</span>
+
+			<p>Salvate, e prima di chiudere Textedit, Bloccate il file tramite l’impostazione che compare in alto al file come nell’esempio. </p>
+			<img src="img/tutorial-2.png" alt="tutorial-1">
+			</article>
+
+			<article>
+				<span>8</span>
+				<p>Riaprite MAIL e dovreste trovarvi la Firma.Se avete bisogno di aiuto sapete dove trovarmi.</p>
+			</article>
+
+			<button class="return">ritorna alla firma</button>
+
+		</div>
+
+
+
+	</div>
+	<!--  /tutorial -->
+
+
+
+
+
+
+
+	<script>
+
+	/* last update = 18.01.2020 */
+
+	var app = angular.module('signature',['ngAnimate']);
+	app.version = 0.5;
+	app.author = 'Purple Network Srl';
+
+	app.controller('SignatureController', ['$scope','$http',function($scope,$http){
+
+			$http.get('data.json').
+			success(function(data, status, headers, config) {
+				$scope.roles = data.roles;
+			}).
+			error(function(data, status, headers, config) {
+				alert("OOPS! L'applicazione non risponde come dovrebbe. Riprova piu tardi, grazie. ");
+			});
+
+			$scope.$watch('phone', function() {
+
+				if(this.last == undefined || this.last == '' || this.last == null) {
+					$scope.formtPhone = '';
+				} else {
+					$scope.formtPhone = '+39 ' + this.last;
+				}
+			 }, true);
+
+			 //$scope.regex_url = '^((https?|ftp)://)?([A-Za-z]+\\.)?[A-Za-z0-9-]+(\\.[a-zA-Z]{1,4}){1,2}(/.*\\?.*)?$';
+
+	}])
+
+
+
+	$('#linkedin_checkbox').on('click',function(){
+		if($(this).prop("checked") === true){
+        	$(".social-linkedin").append(
+						'<td width="16" valign="top" style="padding:0px;"><a style="display:block" href="https://www.linkedin.com/company/jungles-ux/"><img style="display:block; border:0;" width="16" src="https://www.jungl.es/sign_jungles/img/ic_linkedin@2x.png"></a></td><td width="8"></td>'
+					);
+        }
+        else if($(this).prop("checked") === false){
+        	$(".social-linkedin").empty();
+        }
+	})
+
+	$('#instagram_checkbox').on('click',function(){
+		if($(this).prop("checked") === true){
+        	$(".social-instagram").append(
+						'<td width="16" valign="top" style="padding:0px;"><a style="display:block" href="https://www.instagram.com/jungles_ux/"><img style="display:block; border:0;" width="16" src="https://www.jungl.es/sign_jungles/img/ic_instagram@2x.png"></a></td>'
+					);
+        }
+        else if($(this).prop("checked") === false){
+        	$(".social-instagram").empty();
+        }
+	})
+
+	$('.help').on('click',function(){
+		$('#tutorial').addClass('enter');
+		$('body').addClass('hidden');
+
+	})
+
+	$('.close,.return').on('click',function(){
+		$('#tutorial').removeClass('enter');
+		$('body').removeClass('hidden');
+
+	})
+
+	$('button.animation').on('click',function(){
+			$(this).text('update')
+			var html = $('.signature-wrapper').html();
+			$('#area').text(html);
+			$('#area-wrapper').hide().fadeIn();
+
+		})
+
+	</script>
+
+
+
+
+</body>
+</html>
